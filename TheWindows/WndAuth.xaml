@@ -1,0 +1,82 @@
+﻿<Window x:Class="NewHospitalWPF.TheWindows.WndAuth"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NewHospitalWPF.TheWindows"
+        mc:Ignorable="d"
+        Title="Запись на приём к врачу" Height="450" Width="800" 
+        Icon="/Resources/logo.PNG">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40*"/>
+            <RowDefinition Height="400*"/>
+        </Grid.RowDefinitions>
+        <Image Source="/Resources/logo.png"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Center"
+               Grid.Row="0"/>
+    
+        <Border Height="250"
+                Width="350"
+                Grid.Row="1"
+                
+                Background="LightGray">
+            <Grid >
+                <StackPanel Orientation="Vertical"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            >
+                    <TextBlock Style="{StaticResource BlockHeaderDay}">Авторизация</TextBlock>
+                    <Label>Логин</Label>
+                    <TextBox Name="tbLogin"
+                             Margin="10"
+                             Width="210"
+                             Height="30"
+                             VerticalContentAlignment="Center"
+                             BorderThickness="0"/>
+                    <Label>Пароль</Label>
+
+                    <Grid>
+                        <PasswordBox Name="pbPassword"
+                                     Width="210"
+                                     Height="30"
+                                     Margin="5"
+                                     VerticalContentAlignment="Center"
+                                     BorderThickness="0"/>
+                        <TextBox Name="tbPassword"
+                                 Margin="5"
+                                 Visibility="Collapsed"
+                                 VerticalContentAlignment="Center"
+                                 BorderThickness="0"/>
+                        <Button Name="VisiblePass"
+                                Width="65"
+                                Height="30"                                
+                                VerticalAlignment="Center"
+                                HorizontalAlignment="Right"
+                                PreviewMouseLeftButtonDown="VisiblePass_PreviewMouseLeftButtonDown"
+                                PreviewMouseLeftButtonUp="VisiblePass_PreviewMouseLeftButtonUp">
+                            <TextBlock>Показать</TextBlock>
+                        </Button>
+
+                    </Grid>
+                    <Button Name="BtnSign"
+                            Margin="5" 
+                            Click="BtnSign_Click"
+                            IsDefault="True">
+                        <TextBlock>Войти</TextBlock>
+                    </Button>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <Button Name="BtnExit"
+                Grid.Row="0"
+                HorizontalAlignment="Right"
+                Click="BtnExit_Click"
+                >
+            <TextBlock>Закрыть</TextBlock>
+        </Button>
+    </Grid>
+   
+</Window>

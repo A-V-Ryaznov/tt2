@@ -1,0 +1,38 @@
+﻿<Window x:Class="NewHospitalWPF.WndFreeTime"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NewHospitalWPF"
+        mc:Ignorable="d"
+        Title="Свободное время" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <StackPanel x:Name="StackPanel"
+                    Orientation="Vertical" Grid.RowSpan="2">
+            <Label>ГРАФИК СВОБОДНОГО ВРЕМЕНИ</Label>
+            <TextBlock x:Name="TbSpecialization"></TextBlock>
+            <TextBlock x:Name="TbDoctor"/>
+            <StackPanel Orientation="Vertical"
+                   >
+                <TextBlock Text="Время:"/>
+                <StackPanel Orientation="Horizontal"
+                             Name="spTime">
+
+                    <TextBlock x:Name="TbTime"/>
+
+                </StackPanel>
+
+            </StackPanel>
+        </StackPanel>
+
+
+        <Button x:Name="BtnPrint"
+                Grid.Row="1"
+                Content="Печать"
+                Click="BtnPrint_Click"></Button>
+    </Grid>
+</Window>

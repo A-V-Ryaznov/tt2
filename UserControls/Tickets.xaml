@@ -1,0 +1,61 @@
+﻿<UserControl x:Class="NewHospitalWPF.UserControls.Tickets"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:NewHospitalWPF.UserControls"
+             mc:Ignorable="d" 
+             >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Vertical"
+                    x:Name="spTicket"
+                    Grid.Row="0">
+            <StackPanel>
+                <TextBlock Text="{Binding Id}"
+                           Style="{StaticResource BlockHeaderDay}"
+                           TextAlignment="Center"
+                           HorizontalAlignment="Center"/>
+            </StackPanel>
+        <StackPanel Orientation="Horizontal">
+        <TextBlock Text=" Имя врача: "
+                   Grid.Row="0"
+                   Grid.Column="0"/>
+            <TextBlock Text="{Binding DoctorSchedule.Doctor.FullName}"/>
+
+        </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text=" Специализация: "/>
+                <TextBlock Text="{Binding DoctorSchedule.Doctor.Specialization.Name}"/>
+            </StackPanel>
+        <StackPanel Orientation="Horizontal"
+                    Grid.Row="1">
+            <TextBlock Text=" Дата: "/>
+            <TextBlock Text="{Binding DoctorSchedule.Date}"
+                       Name="TbDate"/>
+        </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text=" Время: "/>
+                <TextBlock Text="{Binding StartTime}"
+                           x:Name="TbStart"/>
+                <TextBlock>-</TextBlock>
+                <TextBlock Text="{Binding EndTime}"
+                           Name="TbEnd"/>
+
+            </StackPanel>
+        <StackPanel Orientation="Horizontal"
+                    Grid.Row="3">
+            <TextBlock Text=" Кабинет№:"/>
+            <TextBlock Text="{Binding DoctorSchedule.Doctor.CabinetNumber}"/>
+        </StackPanel>
+        </StackPanel>
+        <Button x:Name="BtnPrint"
+                Click="BtnPrint_Click"
+                Content="Печать"
+                Grid.Row="1"/>
+
+    </Grid>
+</UserControl>

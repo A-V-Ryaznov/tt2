@@ -1,0 +1,46 @@
+﻿<Window x:Class="NewHospitalWPF.AppConfirm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NewHospitalWPF"
+        mc:Ignorable="d"
+        Title="Подтверждающий талон" Height="450" Width="400">
+    <Grid>
+        <Border BorderThickness="5"
+                BorderBrush="Black"
+                Width="Auto"
+                >
+            <StackPanel x:Name="spTicket"
+                    Orientation="Vertical"
+                    HorizontalAlignment="Center"
+                    Width="Auto"
+                    >
+                <TextBlock Style="{StaticResource BlockHeaderDay}"
+                       Width="Auto">Талон</TextBlock>
+                <TextBlock Name="TbSpecialization" 
+                       Style="{StaticResource BlockCommon}"
+                       HorizontalAlignment="Center"
+                       Width="Auto"></TextBlock>
+                <TextBlock x:Name="TbName"
+                       Style="{StaticResource BlockCommon}"
+                       HorizontalAlignment="Center"
+                       Width="Auto"></TextBlock>
+                <TextBlock x:Name="TbDate"
+                       Style="{StaticResource BlockCommon}"
+                       HorizontalAlignment="Center"
+                       Width="Auto"></TextBlock>
+                <TextBlock x:Name="TbTime"
+                       Style="{StaticResource BlockCommon}"
+                       HorizontalAlignment="Center"
+                       Width="Auto"></TextBlock>
+            </StackPanel>
+        </Border>
+
+        <Button x:Name="btnPrint"
+                Click="btnPrint_Click"
+                Content="Печать"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Bottom"></Button>
+    </Grid>
+</Window>
